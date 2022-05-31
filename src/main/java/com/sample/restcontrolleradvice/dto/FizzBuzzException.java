@@ -1,15 +1,15 @@
-package com.hackerrank.restcontrolleradvice.dto;
+package com.sample.restcontrolleradvice.dto;
 
-public class BuzzException extends RuntimeException {
+public class FizzBuzzException extends RuntimeException {
   private final String     message;
   private final String     errorReason;
 
-  public BuzzException(String message, String errorReason) {
+  public FizzBuzzException(String message, String errorReason) {
     this.message = message;
     this.errorReason = errorReason;
   }
 
-  public BuzzException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, String message1, String errorReason) {
+  public FizzBuzzException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace, String message1, String errorReason) {
     super(message, cause, enableSuppression, writableStackTrace);
     this.message = message1;
     this.errorReason = errorReason;

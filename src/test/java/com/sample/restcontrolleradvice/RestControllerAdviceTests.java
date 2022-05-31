@@ -1,4 +1,4 @@
-package com.hackerrank.restcontrolleradvice;
+package com.sample.restcontrolleradvice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

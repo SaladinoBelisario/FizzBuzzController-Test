@@ -1,4 +1,4 @@
-package com.hackerrank.restcontrolleradvice.dto;
+package com.sample.restcontrolleradvice.dto;
 
 public class FizzException extends RuntimeException {
 

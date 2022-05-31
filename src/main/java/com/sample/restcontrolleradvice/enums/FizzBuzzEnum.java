@@ -1,4 +1,4 @@
-package com.hackerrank.restcontrolleradvice.enums;
+package com.sample.restcontrolleradvice.enums;
 
 public enum FizzBuzzEnum {
   FIZZ("fizz"),

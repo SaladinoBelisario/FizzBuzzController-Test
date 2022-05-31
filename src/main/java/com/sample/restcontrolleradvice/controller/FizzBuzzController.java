@@ -1,10 +1,11 @@
-package com.hackerrank.restcontrolleradvice.controller;
+package com.sample.restcontrolleradvice.controller;
 
-import com.hackerrank.restcontrolleradvice.dto.BuzzException;
-import com.hackerrank.restcontrolleradvice.dto.FizzBuzzException;
-import com.hackerrank.restcontrolleradvice.dto.FizzBuzzResponse;
-import com.hackerrank.restcontrolleradvice.dto.FizzException;
-import com.hackerrank.restcontrolleradvice.enums.FizzBuzzEnum;
+import com.sample.restcontrolleradvice.dto.BuzzException;
+import com.sample.restcontrolleradvice.dto.FizzBuzzException;
+import com.sample.restcontrolleradvice.dto.FizzBuzzResponse;
+import com.sample.restcontrolleradvice.dto.FizzException;
+import com.sample.restcontrolleradvice.enums.FizzBuzzEnum;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,13 +20,17 @@ public class FizzBuzzController {
   public ResponseEntity<FizzBuzzResponse> getFizzBuzzResponse(@PathVariable("code") String code)
           throws FizzException, BuzzException, FizzBuzzException {
     if (FizzBuzzEnum.FIZZ.getValue().equals(code)) {
-      //throw new FizzException
+      throw new FizzException("Fizz Exception has been thrown", "Internal Server Error");
     } else if (FizzBuzzEnum.BUZZ.getValue().equals(code)) {
-      //throw new BuzzException
+      throw new BuzzException("Buzz Exception has been thrown", "Bad Request");
     } else if (FizzBuzzEnum.FIZZBUZZ.getValue().equals(code)) {
-      //throw new FizzBuzzException
+      throw new FizzBuzzException("FizzBuzz Exception has been thrown", "Insufficient Storage");
     }
-    //return FizzBuzzResponse
-    return null;
+
+    return new ResponseEntity<>(
+            new FizzBuzzResponse("Successfully completed fizzbuzz test", 200),
+            HttpStatus.OK
+    );
+
   }
 }

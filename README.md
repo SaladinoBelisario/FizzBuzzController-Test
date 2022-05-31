@@ -76,7 +76,7 @@ The runtime exceptions and error response classes are already predefined in the 
 ## Commands
 - run: 
 ```bash
-mvn clean package; java -jar target/RestControllerAdvice-1.0.jar
+mvn clean spring-boot:run
 ```
 - install: 
 ```bash
